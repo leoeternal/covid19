@@ -1,0 +1,81 @@
+<%- include('partials/header') -%>
+        <div class="main_container">
+            <div class="symptoms">
+            <div><h2 style="text-align: center;">Symptoms of covid 19</h2></div>
+            Signs and symptoms of COVID-19 may appear two to 14 days after exposure and can include:
+            </br>
+            <ul class="list">
+                 <li>Fever</li>
+                <li>Cough</li>
+                 <li>Shortness of breath or difficulty breathing</li>
+            </ul>
+            Other symptoms can include:</br></br>
+            </br></br>
+            <ul class="list">
+                 <li>Tiredness</li>
+                 <li>Aches</li>
+                 <li>Runny nose</li>
+                 <li> Sore throat</li>
+                 <li>Headache</li>
+                 <li> Diarrhea</li>
+                 <li>Vomiting</li>
+            </ul>
+            
+            </p>
+            </div>
+            <div class="Container1">
+                
+                <div class="head">CHOOSE COUNTRY</div>
+                <div class="item1" ><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_Austria.svg/255px-Flag_of_Austria.svg.png" class="img" >
+                 <div class="overlay">
+                     <div class="text"><a href="/country/name/result/Austria" style="color: white">Austria</a></div>
+                  </div>
+                </div>
+                
+                <div class="item1"><img src="/images/download.png" class="img">
+                    <div class="overlay">
+                     <div class="text"><a href="/country/name/result/united states of america" style="color: white">U.S.A</a></div>
+                  </div>
+                </div>
+            
+                <div class="item1"><img src="/images/ind.png" class="img">
+                <div class="overlay">
+                     <div class="text"><a href="/country/name/result/India" style="color: white">India</a></div>
+                  </div>
+              </div>
+            
+                <div class="item1"><img src="/images/china.png" class="img">
+                <div class="overlay">
+                     <div class="text"><a href="/country/name/result/China" style="color: white">China</a></div>
+                  </div>
+              </div>
+            
+                <div class="item1"><img src="/images/france.png" class="img">
+                <div class="overlay">
+                     <div class="text"><a href="/country/name/result/France" style="color: white">France</a></div>
+                  </div>
+              </div>
+            
+                <div class="item1"><img src="/images/italy.png" class="img">
+                <div class="overlay">
+                     <div class="text"><a href="/country/name/result/Italy" style="color: white">Italy</a></div>
+                  </div>
+              </div>
+            
+            </div>
+            <div class="news">
+                <h1>TRENDING NEWS</h1>   	
+                <div id="news-border">
+                    <br>
+                    
+                    <% news.body.articles.forEach(function(article)
+                    { %>
+    
+                    <a id="news-title" href="<%= article.url %>"><strong><h6><%= article.title %></h6></strong></a>
+                    <% }) %>
+                </div>
+            </div> 
+            
+            </div>
+
+<%- include('partials/footer') -%>

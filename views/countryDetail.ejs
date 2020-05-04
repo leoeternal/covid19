@@ -1,0 +1,58 @@
+<%- include('partials/header') -%>
+<% if(countryData.body.message!="Not Found"){ %>
+        <br>
+    <center><h1><%= countryData.body[0].Country %></h1></center>
+<% } %>
+<div class="main_container2">
+<% if(countryData.body.message=="Not Found"){ %>
+<center><h1>Sorry no result found</h1></center>
+<% }
+else 
+{ %> 
+        <% if(countryData.body.length==1){ %>
+                <h4><font color="red">Sorry, information about Graph is not updated yet. Try again later</font></h4>
+        <% } else{ %>
+        <p id="data-graph1"><%= countryData.body[countryData.body.length-1].Deaths %></p>
+        <p id="data-graph2"><%= countryData.body[countryData.body.length-2].Deaths %></p>
+        <p id="data-graph3"><%= countryData.body[countryData.body.length-3].Deaths %></p>
+        <p id="data-graph4"><%= countryData.body[countryData.body.length-4].Deaths %></p>
+        <p id="data-graph5"><%= countryData.body[countryData.body.length-5].Deaths %></p>
+        <p id="data-graph6"><%= countryData.body[countryData.body.length-6].Deaths %></p>
+        <p id="data-graph7"><%= countryData.body[countryData.body.length-7].Deaths %></p>
+        <p id="data-graph8"><%= countryData.body[countryData.body.length-8].Deaths %></p>
+        <p id="data-graph9"><%= countryData.body[countryData.body.length-9].Deaths %></p>
+        <p id="data-graph10"><%= countryData.body[countryData.body.length-10].Deaths %></p>
+        <p id="data-graph11"><%= countryData.body[countryData.body.length-11].Deaths %></p>
+        <p id="data-graph12"><%= countryData.body[countryData.body.length-12].Deaths %></p>
+        <div class="Graph">
+     	  
+        </br>
+        <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+      
+</div>
+<% } %>
+<div class="container2">
+      
+      
+      <div class="item-country"><h1>Total Cases:</h1></div>
+      <div class="item-country"><h1><%= countryData.body[countryData.body.length-1].Confirmed %></h1></div>
+      <div class="item-country"><h1>Recovered Cases:</h1></div>
+      <div class="item-country"><h1><%= countryData.body[countryData.body.length-1].Recovered %></h1></div>
+      <div class="item-country"><h1>Total Deaths:</h1></div>
+      <div class="item-country"><h1><%= countryData.body[countryData.body.length-1].Deaths %></h1></div>
+</div>	
+<div class="news-country">
+        <h1 style="text-align: center; background-color: rgb(138, 137, 140)">NEWS</h1>
+        <br>
+        <div class="news_sec">
+                <% news.body.articles.forEach(function(article)
+                    { %>
+    
+                    <a id="news-title" href="<%= article.url %>"><strong><h6><%= article.title %></h6></strong></a>
+                    <% }) %>
+
+        </div>
+</div>
+<% } %>
+</div>
+<%- include('partials/footer') -%>
