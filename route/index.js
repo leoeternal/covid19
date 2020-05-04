@@ -30,7 +30,7 @@ router.get("/",function(req,res){
 
 router.post("/country/name/result",function(req,res){
     var country=req.body.country;
-    var url=process.env.newsurlcountry+country;
+    var url="https://api.covid19api.com/total/dayone/country/"+country;
     request({url:url,json:true}, function (err,getdata) {
         if(err)
         {
